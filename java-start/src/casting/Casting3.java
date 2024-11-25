@@ -13,8 +13,22 @@ public class Casting3 {
         intValue = (int) maxIntValue;
         System.out.println("maxIntValue casting = " + intValue);
 
-        intValue = (int) 2147483648L;
+        intValue = (int) maxIntOver;
         System.out.println("maxIntOver casting = " +maxIntOver);
+        // 원래 -2147483648 로 출력돼야 함
+        // 실행 논리
+        // intValue = (int) maxIntOver; //변수 값 읽기 시도
+        // intValue = (int) 2147483648L; //형변환 시도
+        // intValue = -2147483648
+        // int형은 2147483648L을 표현할 방법이 없으므로, 처음 초과시 그 값에 -가 붙는 형태로 출력됨
+        // 이런 것을 오버플로우라고 함
+
+        // 참고로 -2147483648 는 int의 가장 작은 숫자임
+
+        // 오버플로우 자체가 발생하지 않도록 하여야하고, 발생하였다면 더 큰 타입으로 형 변환 해서 오버플로우 문제 해결
+
+
+
 
 
     }
